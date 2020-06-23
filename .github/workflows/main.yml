@@ -26,7 +26,7 @@ jobs:
     - name: Run docker build and push to heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        APP_NAME: test_ua
+        APP_NAME: test-ua
       run: |
         docker login --username=_ --password=${{ env.HEROKU_API_KEY }} registry.heroku.com
         docker build -t registry.heroku.com/${{ env.APP_NAME }}/web .
