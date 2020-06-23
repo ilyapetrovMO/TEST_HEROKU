@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj": {}
+    "C:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj": {}
   },
   "projects": {
-    "c:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj": {
+    "C:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj",
+        "projectUniqueName": "C:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj",
         "projectName": "HerokuTest",
-        "projectPath": "c:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj",
+        "projectPath": "C:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj",
         "packagesPath": "C:\\Users\\BigBoy\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\obj\\",
+        "outputPath": "C:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\BigBoy\\AppData\\Roaming\\NuGet\\NuGet.Config",
