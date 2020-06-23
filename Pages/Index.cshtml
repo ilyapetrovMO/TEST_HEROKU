@@ -1,4 +1,5 @@
 ﻿@page
+@using System.Collections
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -6,10 +7,10 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <ul>
-        @foreach (var env in Environment.GetEnvironmentVariables())
+    <ul class="list-group">
+        @foreach (DictionaryEntry env in Environment.GetEnvironmentVariables())
         {
-            <li>@env</li>
+            <li class="list-group-item">@env.Key @env.Value</li>
         }
     </ul>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
