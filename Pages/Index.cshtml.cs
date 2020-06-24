@@ -26,7 +26,7 @@ namespace HerokuTest.Pages
 
         public void OnGet(DateTime? createdAt)
         {
-            if (createdAt.Value != null)
+            if (createdAt.HasValue)
             {
                 Reports = (from contr in _context.Contracts
                            join usr in _context.Users
