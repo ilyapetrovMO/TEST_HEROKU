@@ -16,18 +16,41 @@ namespace HerokuTest.Pages
 
         public IList<Contracts> Contracts { get; set; }
 
+        public IList<ReportType> Reports { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger, HerokuTestContext context)
         {
             _logger = logger;
             _context = context;
         }
 
-        public void OnGet([FromQuery] DateTime? createdAt)
+        public void OnGet(DateTime? createdAt)
         {
+            if (createdAt.Value != null)
+            {
+                Reports = (from contr in _context.Contracts
+                           join usr in _context.Users
+                           on contr.UserId equals usr.Id
+                           select new ReportType { Name = usr.Name, SecondName = usr.SecondName, ThirdName = usr.ThirdName, Balance = contr.Balance }).ToList();
+                
+                return;
+            }
+
             Contracts = (from contr in _context.Contracts
                          select new Contracts{ ContractId = contr.ContractId, Balance = contr.Balance }).ToList();
         }
 
+        public class ReportType
+        {
+            public string Name { get; set; }
+
+            public string SecondName { get; set; }
+
+            public string ThirdName { get; set; }
+
+            public long Balance { get; set; }
+
+        }
 
     }
 }

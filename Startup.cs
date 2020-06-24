@@ -23,28 +23,37 @@ namespace HerokuTest
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
         {
-            var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-
-            // Parse connection URL to connection string for Npgsql
-            connUrl = connUrl.Replace("postgres://", string.Empty);
-
-            var pgUserPass = connUrl.Split("@")[0];
-            var pgHostPortDb = connUrl.Split("@")[1];
-            var pgHostPort = pgHostPortDb.Split("/")[0];
-
-            var pgDb = pgHostPortDb.Split("/")[1];
-            var pgUser = pgUserPass.Split(":")[0];
-            var pgPass = pgUserPass.Split(":")[1];
-            var pgHost = pgHostPort.Split(":")[0];
-            var pgPort = pgHostPort.Split(":")[1];
-
-            var connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SslMode=Require;Trust Server Certificate=true";
-
             services.AddRazorPages();
-            services.AddDbContext<HerokuTestContext>(options =>
+
+            if (env.IsDevelopment())
+            {
+                services.AddDbContext<HerokuTestContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("localDb")));
+            }
+            else
+            {
+                var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+                // Parse connection URL to connection string for Npgsql
+                connUrl = connUrl.Replace("postgres://", string.Empty);
+
+                var pgUserPass = connUrl.Split("@")[0];
+                var pgHostPortDb = connUrl.Split("@")[1];
+                var pgHostPort = pgHostPortDb.Split("/")[0];
+
+                var pgDb = pgHostPortDb.Split("/")[1];
+                var pgUser = pgUserPass.Split(":")[0];
+                var pgPass = pgUserPass.Split(":")[1];
+                var pgHost = pgHostPort.Split(":")[0];
+                var pgPort = pgHostPort.Split(":")[1];
+
+                var connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SslMode=Require;Trust Server Certificate=true";
+                
+                services.AddDbContext<HerokuTestContext>(options =>
                     options.UseNpgsql(connStr));
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
