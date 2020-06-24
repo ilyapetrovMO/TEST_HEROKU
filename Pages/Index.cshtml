@@ -1,6 +1,4 @@
 ﻿@page
-@using System.Collections
-@using HerokuTest.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -17,8 +15,7 @@
     <ul class="list-group">
         @foreach (IndexModel.ReportType rep in Model.Reports)
         {
-            <ul class="list-group-item">@rep.Name<text> </text>@rep.Balance</ul>
+            <il class="list-group-item">@rep.Name<text> </text>@rep.Balance</il>
         }
     </ul>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

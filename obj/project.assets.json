@@ -5022,7 +5022,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore.Design >= 3.1.5",
-      "Microsoft.EntityFrameworkCore.Sqlserver >= *",
+      "Microsoft.EntityFrameworkCore.Sqlserver >= 3.1.5",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.1.4"
     ]
   },
@@ -5071,7 +5071,7 @@
           },
           "Microsoft.EntityFrameworkCore.Sqlserver": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.1.5, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",

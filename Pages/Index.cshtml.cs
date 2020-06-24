@@ -14,9 +14,7 @@ namespace HerokuTest.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly HerokuTestContext _context;
 
-        public IList<Contracts> Contracts { get; set; }
-
-        public IList<ReportType> Reports { get; set; }
+        public IList<ReportType> Reports { get; set; } = new List<ReportType>();
 
         public IndexModel(ILogger<IndexModel> logger, HerokuTestContext context)
         {
@@ -31,7 +29,11 @@ namespace HerokuTest.Pages
                 Reports = (from contr in _context.Contracts
                            join usr in _context.Users
                            on contr.UserId equals usr.Id
-                           select new ReportType { Name = usr.Name, SecondName = usr.SecondName, ThirdName = usr.ThirdName, Balance = contr.Balance }).ToList();
+                           select new ReportType {
+                               Name = usr.Name,
+                               SecondName = usr.SecondName,
+                               ThirdName = usr.ThirdName,
+                               Balance = contr.Balance }).ToList();
             }
         }
 
