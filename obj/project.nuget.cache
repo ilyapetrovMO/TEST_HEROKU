@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p77i0Eb0jsWbSSq25dOQzXuLeNggWvdH9zCSJztpg4kSQQpLkd2evFkaoSfk8yTaq9lNxMfDtHJvdbBN6M0iLA==",
+  "dgSpecHash": "XvLJiMeRlOHB1UlyY6llw8TsHGxuMzll9PwpR3JYYV1xwtjIokNbXEBDGlkHUsGbeA8qN2oJLFm6c/p+KR87ww==",
   "success": true,
   "projectFilePath": "C:\\Users\\BigBoy\\source\\repos\\TESTING\\HerokuTest\\HerokuTest.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.5\\microsoft.entityframeworkcore.design.3.1.5.nupkg.sha512",
     "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.5\\microsoft.entityframeworkcore.relational.3.1.5.nupkg.sha512",
     "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.5\\microsoft.entityframeworkcore.sqlserver.3.1.5.nupkg.sha512",
+    "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.5\\microsoft.entityframeworkcore.tools.3.1.5.nupkg.sha512",
     "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.5\\microsoft.extensions.caching.abstractions.3.1.5.nupkg.sha512",
     "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.5\\microsoft.extensions.caching.memory.3.1.5.nupkg.sha512",
     "C:\\Users\\BigBoy\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.5\\microsoft.extensions.configuration.3.1.5.nupkg.sha512",

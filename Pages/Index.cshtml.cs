@@ -29,6 +29,7 @@ namespace HerokuTest.Pages
                 Reports = (from contr in _context.Contracts
                            join usr in _context.Users
                            on contr.UserId equals usr.Id
+                           where contr.CreatedAt.Date == createdAt.Value.Date
                            select new ReportType {
                                Name = usr.Name,
                                SecondName = usr.SecondName,

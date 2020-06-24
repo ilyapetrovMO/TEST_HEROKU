@@ -3,13 +3,21 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<script type="text/javascript">
+    function validateCreatedAt() {
+        let value = document.forms["dateForm"]["createdAt"].value;
+        if (value == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+</script>
 
-<div class="text-center">
-
-    <h1 class="display-4">Welcome</h1>
-    <form method="GET" >
-        <input name="createdAt"/>
-        <button type="submit">Создать отчет</button>
+<div class="">
+    <form name="dateForm" class="form-group row col-lg-6" method="GET" onsubmit="return validateCreatedAt()">
+        <legend>Дата начала контракта</legend>
+        <input class="form-control" type="datetime-local" name="createdAt"/>
+        <button class="btn btn-primary mt-2" type="submit">Создать отчет</button>
     </form>
 
     <ul class="list-group">
