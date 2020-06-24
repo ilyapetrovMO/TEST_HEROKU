@@ -1,5 +1,6 @@
 ﻿@page
 @using System.Collections
+@using HerokuTest.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,9 +9,9 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <ul class="list-group">
-        @foreach (DictionaryEntry env in Environment.GetEnvironmentVariables())
+        @foreach (Contracts ctr in Model.Contracts)
         {
-            <li class="list-group-item">@env.Key @env.Value</li>
+            <ul>@ctr.ContractId<text> </text>@ctr.Balance</ul>
         }
     </ul>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
