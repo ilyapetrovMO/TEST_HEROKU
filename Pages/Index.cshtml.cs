@@ -32,12 +32,7 @@ namespace HerokuTest.Pages
                            join usr in _context.Users
                            on contr.UserId equals usr.Id
                            select new ReportType { Name = usr.Name, SecondName = usr.SecondName, ThirdName = usr.ThirdName, Balance = contr.Balance }).ToList();
-                
-                return;
             }
-
-            Contracts = (from contr in _context.Contracts
-                         select new Contracts{ ContractId = contr.ContractId, Balance = contr.Balance }).ToList();
         }
 
         public class ReportType
