@@ -16,37 +16,45 @@
 <div class="">
     <form name="dateForm" class="form-group row col-lg-6" method="GET" onsubmit="return validateCreatedAt()">
         <legend>Дата начала контракта</legend>
-        <input class="form-control" type="datetime-local" value="2020-06-21T19:30" name="createdAt"/>
+        <input class="form-control" type="datetime-local" value="2020-06-21T19:30" name="createdAt" />
         <button class="btn btn-primary mt-2" type="submit">Создать отчет</button>
     </form>
 
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <td>Имя</td>
-                <td>Фамилия</td>
-                <td>Отчество</td>
-                <td>Баланс</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (IndexModel.ReportType rep in Model.Reports)
-            {
+    @if (Model.Reports.Count != 0)
+    {
+        <table class="table table-dark">
+            <thead>
                 <tr>
-                    <td>
-                        @rep.Name
-                    </td>
-                    <td>
-                        @rep.SecondName
-                    </td>
-                    <td>
-                        @rep.ThirdName
-                    </td>
-                    <td>
-                        @rep.Balance
-                    </td>
+                    <td>Имя</td>
+                    <td>Фамилия</td>
+                    <td>Отчество</td>
+                    <td>Баланс</td>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (IndexModel.ReportType rep in Model.Reports)
+                {
+                    <tr>
+                        <td>
+                            @rep.Name
+                        </td>
+                        <td>
+                            @rep.SecondName
+                        </td>
+                        <td>
+                            @if (rep.ThirdName.Length != 0)
+                            {
+                                <text>rep.ThirdName</text>
+                                return;
+                            }
+                            -
+                        </td>
+                        <td>
+                            @rep.Balance
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
