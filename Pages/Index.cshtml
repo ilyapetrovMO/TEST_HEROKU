@@ -35,8 +35,8 @@
                 @foreach (IndexModel.ReportType rep in Model.Reports)
                 {
                 <tr>
-                    <td>@rep.Name</td>
                     <td>@rep.SecondName</td>
+                    <td>@rep.Name</td>
                     <td>@rep.ThirdName.Length != 0 ? <text></text></td>
                     <td>@rep.Balance</td>
                 </tr>
