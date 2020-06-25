@@ -27,6 +27,8 @@ namespace HerokuTest.Pages
         {
             if (createdAt.HasValue)
             {
+                Console.WriteLine("DEBUG: getting data from db");
+
                 Reports = (from contr in _context.Contracts
                            join usr in _context.Users
                            on contr.UserId equals usr.Id
