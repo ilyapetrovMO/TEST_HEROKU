@@ -15,7 +15,7 @@ namespace HerokuTest.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly HerokuTestContext _context;
 
-        public IList<ReportType> Reports { get; set; }
+        public IList<ReportType> Reports { get; set; } = null;
 
         public IndexModel(ILogger<IndexModel> logger, HerokuTestContext context)
         {
@@ -48,8 +48,6 @@ namespace HerokuTest.Pages
             public string ThirdName { get; set; }
 
             public long Balance { get; set; }
-
         }
-
     }
 }
