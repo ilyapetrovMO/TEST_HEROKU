@@ -42,12 +42,7 @@
                             @rep.SecondName
                         </td>
                         <td>
-                            @if (rep.ThirdName.Length != 0)
-                            {
-                                <text>rep.ThirdName</text>
-                                return;
-                            }
-                            -
+                            @rep.ThirdName.Length != 0 ? <text>rep.ThirdName</text> : <text>-</text>
                         </td>
                         <td>
                             @rep.Balance
