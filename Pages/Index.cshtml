@@ -33,16 +33,18 @@
             @foreach (IndexModel.ReportType rep in Model.Reports)
             {
                 <tr>
-                    @rep.Name
-                </tr>
-                <tr>
-                    @rep.SecondName
-                </tr>
-                <tr>
-                    @rep.ThirdName
-                </tr>
-                <tr>
-                    @rep.Balance
+                    <td>
+                        @rep.Name
+                    </td>
+                    <td>
+                        @rep.SecondName
+                    </td>
+                    <td>
+                        @rep.ThirdName
+                    </td>
+                    <td>
+                        @rep.Balance
+                    </td>
                 </tr>
             }
         </tbody>
