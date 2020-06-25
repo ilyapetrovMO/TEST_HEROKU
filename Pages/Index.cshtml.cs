@@ -15,7 +15,7 @@ namespace HerokuTest.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly HerokuTestContext _context;
 
-        public IList<ReportType> Reports { get; set; } = new List<ReportType>();
+        public IList<ReportType> Reports { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, HerokuTestContext context)
         {
