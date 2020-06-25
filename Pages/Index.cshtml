@@ -16,14 +16,35 @@
 <div class="">
     <form name="dateForm" class="form-group row col-lg-6" method="GET" onsubmit="return validateCreatedAt()">
         <legend>Дата начала контракта</legend>
-        <input class="form-control" type="datetime-local" name="createdAt"/>
+        <input class="form-control" type="datetime-local" value="2020-06-21T19:30" name="createdAt"/>
         <button class="btn btn-primary mt-2" type="submit">Создать отчет</button>
     </form>
 
-    <ul class="list-group">
-        @foreach (IndexModel.ReportType rep in Model.Reports)
-        {
-            <il class="list-group-item">@rep.Name<text> </text>@rep.Balance</il>
-        }
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Имя</td>
+                <td>Фамилия</td>
+                <td>Отчество</td>
+                <td>Баланс</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (IndexModel.ReportType rep in Model.Reports)
+            {
+                <tr>
+                    @rep.Name
+                </tr>
+                <tr>
+                    @rep.SecondName
+                </tr>
+                <tr>
+                    @rep.ThirdName
+                </tr>
+                <tr>
+                    @rep.Balance
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
