@@ -53,6 +53,9 @@ namespace HerokuTest
                 
                 services.AddDbContext<HerokuTestContext>(options =>
                     options.UseNpgsql(connStr));
+
+                services.AddControllers();
+
             }
         }
 
@@ -80,6 +83,8 @@ namespace HerokuTest
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+
+                endpoints.MapControllers();
             });
         }
     }
