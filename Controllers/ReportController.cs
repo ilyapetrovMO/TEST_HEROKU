@@ -32,7 +32,7 @@ namespace HerokuTest.Controllers
 
             if (result != null)
             {
-                return Ok(result.Balance);
+                return Ok(new { result.Balance });
             }
 
             return NotFound();
