@@ -39,7 +39,7 @@
                             @rep.Name
                         </td>
                         <td>
-                            @rep.SecondName
+                            @rep.SecondName.Length != 0 ? <text>rep.ThirdName</text> : <text>-</text>
                         </td>
                         <td>
                             @rep.ThirdName.Length != 0 ? <text>rep.ThirdName</text> : <text>-</text>
